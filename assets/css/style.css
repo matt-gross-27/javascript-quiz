@@ -12,8 +12,9 @@
 }
 
 body {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: #F8F9FE;
+  background-color: black;
 }
 
 header{
@@ -52,7 +53,7 @@ header span {
   color: var(--color3);
 }
 
-.quiz-wrapper {
+.quiz-wrapper, .start-message {
   width: 85%;
   border: solid 4px var(--color1);
   margin: 0 auto;
@@ -64,10 +65,34 @@ header span {
   border-radius: 15px;
 }
 
+.start-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .question {
   border-bottom: 2px solid var(--color1);
   padding-bottom: 35px;
   font-size: 20px; 
+  line-height: 1.5;
+  font-weight: normal;
+}
+
+#start {
+  cursor: pointer;
+  padding: 15px 32px;
+  background-color: var(--color2);
+  font-size: 29px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 0 1px var(--color4);
+  border: solid 1px var(--color1);
+  color: var(--color3);
+  font-weight: bold;
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  outline: none;
 }
 
 .choices {
@@ -80,7 +105,7 @@ header span {
   text-align: center;
 }
 
-div.choice {
+.choice {
   height: 50px;
   min-height: 75px;
   display: flex;
@@ -88,49 +113,47 @@ div.choice {
   justify-content: center;
   border-radius: 15px;
   flex-wrap: wrap;
-}
-
-div.choice:nth-child(1) {
-  background-color: var(--color1);
-  border: 2px solid var(--color2);
-}
-
-div.choice:nth-child(2) {
-  background-color: var(--color2);
-  border: 2px solid var(--color3);
-}
-
-div.choice:nth-child(3) {
-  background-color: var(--color3);
-  border: 2px solid var(--color4);
-}
-
-div.choice:nth-child(4) {
-  background-color: var(--color4);
-  border: 2px solid var(--color1);
-}
-
-div.choice:hover {
-  background-color: black;
-}
-
-li.choice {
   font-size: 20px;
   color: black;
 }
 
-div.choice:nth-child(1):hover li {
+.choice:nth-child(1) {
+  background-color: var(--color1);
+  border: 2px solid var(--color2);
+}
+
+.choice:nth-child(2) {
+  background-color: var(--color2);
+  border: 2px solid var(--color3);
+}
+
+.choice:nth-child(3) {
+  background-color: var(--color3);
+  border: 2px solid var(--color4);
+}
+
+.choice:nth-child(4) {
+  background-color: var(--color4);
+  border: 2px solid var(--color1);
+}
+
+.choice:hover {
+  background-color: black;
+}
+
+
+.choice:nth-child(1):hover {
   color: var(--color1);
 }
 
-div.choice:nth-child(2):hover li {
+.choice:nth-child(2):hover {
   color: var(--color2);
 }
 
-div.choice:nth-child(3):hover li {
+.choice:nth-child(3):hover {
   color: var(--color3);
 }
 
-div.choice:nth-child(4):hover li {
+.choice:nth-child(4):hover {
   color: var(--color4);
 }
