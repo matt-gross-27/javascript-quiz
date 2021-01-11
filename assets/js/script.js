@@ -96,6 +96,14 @@ var startQuiz = function() {
   var startMessage = document.querySelector(".message")
   startMessage.remove();
 
+  // "Fisher-Yates Shuffle" the question array
+  for (var i = qArr.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * i)
+    var temp = qArr[i]
+    qArr[i] = qArr[j]
+    qArr[j] = temp
+  }
+
   //start the timer
   var timedInterval = setInterval(function(){
     if (timeLeft <= 0){
