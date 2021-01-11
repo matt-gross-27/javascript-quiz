@@ -163,19 +163,17 @@ var endQuiz = function(){
 var saveScore = function(event) {
   event.preventDefault();
   playerName = event.target.querySelector("input[name='name']").value;
-  console.log(playerName)
+  formEl.reset();
   if(playerName) {
     highScore = localStorage.getItem(`jsQuiz: ${playerName}`);
-    if(!highScore){
+    if(!highScore || parseInt(highScore) < score) {
       localStorage.setItem(`jsQuiz: ${playerName}`, score);
       shoutOut();
-    }
-    else if(parseInt(highScore) < score){
-      localStorage.setItem(`jsQuiz: ${playerName}`, score);
-      shoutOut();
+    } 
+    else {
+      almost();
     }
   }
-  formEl.reset();
 }
 
 var shoutOut = function() {
@@ -190,6 +188,17 @@ var shoutOut = function() {
   restart.textContent = "Try Again";
   restart.setAttribute("id","restart");
   bodyEl.appendChild(restart);
+  restart.addEventListener("click",tryAgain)
+}
+
+var almost = function() {
+  var submitEl = document.querySelector("button");
+  submitEl.textContent = "Try Again";
+  submitEl.addEventListener("click",tryAgain)
+}
+
+var tryAgain = function() {
+  location.reload();
 }
 
 //~~~~~~~EVENT LISTENERS~~~~~~~
