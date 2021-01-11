@@ -19,7 +19,6 @@ body {
 }
 
 header{
-  background: black;
   border-bottom: 1vw solid var(--color4);
   display: flex;
   align-items: center;
@@ -60,22 +59,18 @@ header span {
   color: var(--color3);
 }
 
-.quiz-wrapper, .start-message {
+.quiz-wrapper, .message {
   width: 90%;
   border: solid 4px var(--color1);
   margin: 0 auto;
   margin-bottom: 50px;
-  background: black;
   color: #F8F9FE;;
   padding: 5vw 5vw 1vw 5vw;
   border-radius: 15px;
 }
 
-.start-message { 
+.message { 
   text-align: justify;
-}
-
-.start-message {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -185,7 +180,7 @@ header span {
     font-size: 29px; 
   }
 
-  .question, .choice {
+  .question, .choice, #start{
     font-size: 18px;
   }
 }
@@ -211,7 +206,7 @@ header span {
   header h1 {
     margin-bottom: 7px;
   }
-  .question, .choice {
+  .question, .choice, #start{ {
     font-size: 18px;
   }
 }
@@ -219,5 +214,9 @@ header span {
 @media screen and (max-width: 500px) {
   header h1, header h2 {
     font-size: 22px; 
+  }
+
+  .choice {
+    font-size: 16px;
   }
 }
