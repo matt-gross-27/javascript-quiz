@@ -5,6 +5,7 @@ var timeLeft = 60;
 var timerEl = document.querySelector("#timer")
 var score = 0;
 
+var bodyEl = document.querySelector("body");
 var quizWrapperEl = document.createElement("section");
 var qEl = document.createElement("h2");
 var choiceListEl = document.createElement("ul");
@@ -14,22 +15,35 @@ var qNum = 0;
 var qArr = [
   {
     q: 'Let stringNum = "9". Which of the following methods can be used to convert stringNum from a string to an integer?',
-    choices: ["parseInt(stringNum)", "num(stringNum)", "int(stringNum)", "stringNum.toInt()"],
+    l: ["parseInt(stringNum)", "num(stringNum)", "int(stringNum)", "stringNum.toInt()"],
     a: "parseInt(stringNum)"
   } ,
   {
     q: 'JavaScript scripts can be located in what section of an html document?',
-    choices: ["the body", "the head", "all of the above", "none of the above"],
+    l: ["the body", "the head", "all of the above", "none of the above"],
     a: "all of the above"
   },
   {
     q: 'JavaScript and Java are the same language.',
-    choices: ["true", "false"],
+    l: ["true", "false"],
     a: "false"
-  }
+  },
+  {
+    q: `Given the code: <br><br> var bodyEl = document.querySelector( 'body' ); <br> console.log( typeof bodyEl ); <br><br> Which message do you expect to find in the console?`,
+    l: [`"body"`, `"element"`, `"object"`,`"document"`],
+    a: `"object"`
+  },
+  {
+    q: `which of the following is not a data type in Java Script?`,
+    l: [`string`, `boolean`, `array`, `table`],
+    a: `table`,
+  },
+  {
+    q:``,
+    l:[],
+    a:``,
+  },
 ];
-
-var bodyEl = document.querySelector("body");
 
 //~~~~~~~FUNCTIONS~~~~~~~
 
@@ -61,15 +75,15 @@ var askQuestion = function() {
     
     quizWrapperEl.appendChild(qEl);
     qEl.className = "question";
-    qEl.textContent = qArr[qNum].q;
+    qEl.innerHTML = qArr[qNum].q;
     
     choiceListEl.className = "choices";
     quizWrapperEl.appendChild(choiceListEl);
     
-    for (let i = 0; i < qArr[qNum].choices.length; i++) {
+    for (let i = 0; i < qArr[qNum].l.length; i++) {
       var choiceEl = document.createElement("li");
       choiceEl.className ="choice";
-      choiceEl.textContent = qArr[qNum].choices[i];
+      choiceEl.textContent = qArr[qNum].l[i];
       choiceListEl.appendChild(choiceEl);
     }
   } else {
@@ -83,11 +97,13 @@ var scoreQuestion = function(event) {
   if(userChoice.matches("li.choice")) {
     if(userChoice.textContent === qArr[qNum].a) {
       score ++;
+      //temp_del
+      alert(score);
     }
     else {
       timeLeft -= 5;
     }
-    for (let i = 0; i < qArr[qNum].choices.length; i++) {
+    for (let i = 0; i < qArr[qNum].l.length; i++) {
       var choiceEl = document.querySelector("li.choice");
       choiceEl.remove();
       qEl.textContent = "";

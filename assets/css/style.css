@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 2.5vw;
 }
 
 :root {
@@ -19,11 +20,11 @@ body {
 
 header{
   background: black;
-  border-bottom: 1vw solid var(--color2);
-  height: 14vw;
+  border-bottom: 1vw solid var(--color4);
   display: flex;
   align-items: center;
-  margin-bottom: 4vw;
+  margin-bottom: 3vw;
+  min-height: 40px;
 }
 
 header div{
@@ -31,17 +32,23 @@ header div{
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 0 20px 0 20px;
-  font-size: 2.8vw;
+  flex-wrap: wrap;
+  padding: 6vw 20px 6vw 20px;
   width: 80%;
 }
 
 header h1 {
   color: var(--color1);
+  font-size: 120%;
 }
 
 header h2 {
   color: var(--color2);
+  font-size: 120%;
+}
+
+header h2 span {
+  font-size: 100%;
 }
 
 .form {
@@ -54,15 +61,18 @@ header span {
 }
 
 .quiz-wrapper, .start-message {
-  width: 85%;
+  width: 90%;
   border: solid 4px var(--color1);
   margin: 0 auto;
   margin-bottom: 50px;
   background: black;
   color: #F8F9FE;;
   padding: 5vw 5vw 1vw 5vw;
-  text-align: justify;
   border-radius: 15px;
+}
+
+.start-message { 
+  text-align: justify;
 }
 
 .start-message {
@@ -74,25 +84,35 @@ header span {
 .question {
   border-bottom: 2px solid var(--color1);
   padding-bottom: 35px;
-  font-size: 20px; 
   line-height: 1.5;
   font-weight: normal;
+  overflow-wrap: break-word;
 }
 
 #start {
-  cursor: pointer;
+  color: black;
   padding: 15px 32px;
-  background-color: var(--color2);
-  font-size: 29px;
   border-radius: 15px;
-  box-shadow: 2px 2px 0 1px var(--color4);
-  border: solid 1px var(--color1);
-  color: var(--color3);
-  font-weight: bold;
+  background-color: var(--color2);
   text-align: center;
-  margin-top: 35px;
+  font-weight: bold;
   margin-bottom: 35px;
+  margin-top: 35px;
+  cursor: pointer;
   outline: none;
+  border: 1px solid var(--color1);
+}
+
+#start:hover{
+  box-shadow: 2px 2px 0 2px var(--color1);
+  background-color: black;
+  color: var(--color2);
+}
+
+#start:active{
+  box-shadow: none;
+  border-top: none;
+  border-left: none;
 }
 
 .choices {
@@ -103,6 +123,7 @@ header span {
   display: grid;
   grid-template-columns: 1fr 1fr;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 .choice {
@@ -113,8 +134,8 @@ header span {
   justify-content: center;
   border-radius: 15px;
   flex-wrap: wrap;
-  font-size: 20px;
   color: black;
+  font-size: 80%;
 }
 
 .choice:nth-child(1) {
@@ -156,4 +177,47 @@ header span {
 
 .choice:nth-child(4):hover {
   color: var(--color4);
+}
+
+/* Small Desktops */
+@media screen and (max-width: 980px) {
+  header h1, header h2 {
+    font-size: 29px; 
+  }
+
+  .question, .choice {
+    font-size: 18px;
+  }
+}
+
+/* iPads */
+@media screen and (max-width: 780px) {
+  .choices {
+    grid-template-columns: 1fr;
+  }
+  
+  header {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  header div {
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  header h1 {
+    margin-bottom: 7px;
+  }
+  .question, .choice {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  header h1, header h2 {
+    font-size: 22px; 
+  }
 }
