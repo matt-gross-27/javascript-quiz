@@ -14,8 +14,10 @@
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: #F8F9FE;
   background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
 }
 
 header{
@@ -51,8 +53,34 @@ header h2 span {
 }
 
 .form {
-  background: grey;
+  background: var(--color1);
+  color: black;
+  border: 2px solid var(--secondary-color);
+  padding: 30px;
+  margin: 3.5%;
+  width: 90%;
+  border-radius: 15px;
+}
+
+.form input {
+  display: block;
+  margin: 30px auto;
+  border-radius: ;
+  border: 1px solid var(--secondary-color);
+  padding: 7px 15px;
+  width: 80%;
+  margin-bottom: 3vw;
+  border-radius: 10px;
+  color: #9df5bf;
+  background-color: black;
+}
+
+.form input::placeholder{
   color: var(--color4);
+}
+
+.shout-out {
+  padding-bottom: 4vw;
 }
 
 header span {
@@ -70,7 +98,7 @@ header span {
 }
 
 .message { 
-  text-align: justify;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -84,30 +112,34 @@ header span {
   overflow-wrap: break-word;
 }
 
-#start {
+button {
   color: black;
   padding: 15px 32px;
   border-radius: 15px;
   background-color: var(--color2);
   text-align: center;
   font-weight: bold;
-  margin-bottom: 35px;
-  margin-top: 35px;
-  cursor: pointer;
+  margin-bottom: 30px;
+  margin-top: 30px;
   outline: none;
-  border: 1px solid var(--color1);
+  border: 1px solid var(--color4);
 }
 
-#start:hover{
-  box-shadow: 2px 2px 0 2px var(--color1);
+button:hover{
+  box-shadow: 1px 2px 1px 2px var(--color4);
   background-color: black;
   color: var(--color2);
+  cursor: pointer;
 }
 
-#start:active{
+button:active{
   box-shadow: none;
   border-top: none;
   border-left: none;
+}
+
+#restart{
+  margin: 0 auto;
 }
 
 .choices {
@@ -155,6 +187,7 @@ header span {
 
 .choice:hover {
   background-color: black;
+  cursor: pointer;
 }
 
 
@@ -180,7 +213,7 @@ header span {
     font-size: 29px; 
   }
 
-  .question, .choice, #start{
+  .question, .choice, button, .form input, .shout-out{
     font-size: 18px;
   }
 }
@@ -206,7 +239,7 @@ header span {
   header h1 {
     margin-bottom: 7px;
   }
-  .question, .choice, #start{ {
+  .question, .choice, button, .form h2, .form input, .shout-out {
     font-size: 18px;
   }
 }
