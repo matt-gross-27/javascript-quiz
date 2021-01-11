@@ -56,6 +56,36 @@ var qArr = [
         console.log(x) prints____?`,    
     l: [`2`, `"20"`, `4` ,`"13"`],
     a: `"13"`
+  },
+  {
+    q: `JavaScript is classified by what type of programming paradigm?`,
+    l: [`Functional`, `Object-oriented`, `Procedural`, `Structural`],
+    a: `Object-oriented`
+  },
+  {
+    q: `How can you print “Welcome!” to a pop up window? `,
+    l: [`popup(“Welcome!”);`, `insert(“Welcome!”);`, `alert(“Welcome!”);`, `window.prompt("Welcome!”);`],
+    a: `alert(“Welcome!”);`
+  },
+  {
+    q: `Which if statement has incorrect syntax?`,
+    l: [`if(i == 1)`, `if(i is 1)`, `if(i)`, `if(!i)`],
+    a: `if(i is 1)`
+  },
+  {
+    q: `Which of the following is not a method of the Location Object?`,
+    l: [`refresh()`, `reload()`, `replace()`, `assign()`],
+    a: `refresh()`
+  },
+  {
+    q: `Which assigns an array to a variable?`,
+    l: [
+      `var arr = ('a','b','c')`,
+      `let arr = ['a','b','c']`,
+      `arr = [0:'a',1:'b',2:'c']`,
+      `arr var = ['a','b','c']`
+    ],
+    a: `let arr = ['a','b','c']`
   }
 ];
 
