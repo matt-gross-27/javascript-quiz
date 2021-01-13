@@ -256,4 +256,8 @@ button:active{
   .choice {
     font-size: 16px;
   }
+  
+  .form input {
+    width: 90%;
+  }
 }
