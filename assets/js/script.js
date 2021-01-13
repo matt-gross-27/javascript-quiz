@@ -58,11 +58,6 @@ var qArr = [
     a: `"13"`
   },
   {
-    q: `JavaScript is classified by what type of programming paradigm?`,
-    l: [`Functional`, `Object-oriented`, `Procedural`, `Structural`],
-    a: `Object-oriented`
-  },
-  {
     q: `How can you print “Welcome!” to a pop up window? `,
     l: [`popup(“Welcome!”);`, `insert(“Welcome!”);`, `alert(“Welcome!”);`, `window.prompt("Welcome!”);`],
     a: `alert(“Welcome!”);`
@@ -86,6 +81,35 @@ var qArr = [
       `arr var = ['a','b','c']`
     ],
     a: `let arr = ['a','b','c']`
+  },
+  {
+    q: `let arr = [1 , 2, 3, 4] <br>
+       for(i = 0; i < arr.length; i++) { <br>
+       if(i === 3) { <br>
+       break; <br>
+       } <br>
+       let hi = "hello" <br>
+       console.log("hi") <br>
+       } <br><br>
+       What should you see in the console?`
+       
+      ,
+    l: [`③ hello`,`③ hi`,`④ hi`,`④ hello`],
+    a: `③ hi`
+  },
+  {
+    q: `localStorage.setItem("keyName", "value").<br> You could get "value" with localStorage.fetchItem("keyName")`,
+    l: ["true", "false"],
+    a: "false"
+  },
+  {
+    q:`GIVEN: <br>
+        var arr = ['a', 'b', 'c'] <br>
+        arr = arr.push('d') <br><br>
+        WHEN: arr is referenced again.<br>
+        THEN: arr will return ['a', 'b', 'c', 'd']`,
+    l: ["true", "false"],
+    a: "false"
   }
 ];
 
@@ -162,7 +186,6 @@ var scoreQuestion = function(event) {
   }
 }
 
-//WIP
 var endQuiz = function(){
   choiceListEl.remove();
   
